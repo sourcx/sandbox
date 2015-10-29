@@ -1,0 +1,3 @@
+[submodule "canvas/lib/canvasengine"]
+	path = canvas/lib/canvasengine
+	url = https://github.com/RSamaium/CanvasEngine.git
