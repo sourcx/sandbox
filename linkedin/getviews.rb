@@ -1,7 +1,7 @@
 require 'watir-webdriver'
 require 'watir-scroll'
 
-USERNAME = ""
+USERNAME = "linkedin@frankevers.nl"
 PASSWORD = ""
 
 browser = Watir::Browser.new :chrome
