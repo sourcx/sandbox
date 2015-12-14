@@ -1,0 +1,20 @@
+GIT
+  remote: git@github.com:tinify/tinify-ruby.git
+  revision: 9708e823ae6ebcbf1d48575c2ad5f3a6bfd4b2be
+  specs:
+    tinify (1.1.0)
+      httpclient (~> 2.6)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    httpclient (2.7.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  tinify!
+
+BUNDLED WITH
+   1.10.6
