@@ -1,0 +1,51 @@
+<html>
+<head>
+  <!-- <script src="http://refreshless.com/noUiSlider/distribute/nouislider.js"></script>
+  <link href="http://refreshless.com/noUiSlider/distribute/nouislider.min.css" rel="stylesheet"> -->
+
+  <script src="nouislider.js"></script>
+  <link href="nouislider.css" rel="stylesheet">
+
+  <style>
+  body { background: #eeeeee; }
+  .slider {
+    margin: 80px;
+  }
+  .noUi-tooltip {
+    background: green;
+/*    top: -32px;*/
+  }
+
+  .noUi-horizontal .noUi-handle-upper .noUi-tooltip {
+    top: -32px;
+    bottom: initial;
+  }
+
+  </style>
+  <script>
+  function data ( element, key ) {
+  	return element.getAttribute('data-' + key);
+  }
+
+  function createSlider ( slider ) {
+          noUiSlider.create(slider, {
+              start: [0, 50],
+            	tooltips: [ true, true ],
+              range: {
+                  'min': 0,
+                  'max': 50
+              }
+          });
+  }
+
+  </script>
+</head>
+<body>
+<div class="slider"></div>
+<div class="slider"></div>
+<div class="slider"></div>
+  <script>
+    Array.prototype.forEach.call(document.querySelectorAll('.slider'), createSlider);
+  </script>
+</body>
+</html>
