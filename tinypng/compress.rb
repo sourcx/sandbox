@@ -1,35 +1,32 @@
-require "net/https"
-require "uri"
-require "time"
+# export TINY_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+require 'tinify'
 
-# export TINY_KEY=<key_here>
-def compress(input, output)
-  key = ENV["TINY_KEY"]
-  uri = URI.parse("https://api.tinify.com/shrink")
+Tinify.key = ENV['TINY_KEY']
 
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
+source = Tinify.from_file("images/in/small.jpg")
 
-  # Uncomment below if you have trouble validating our SSL certificate.
-  # Download cacert.pem from: http://curl.haxx.se/ca/cacert.pem
-  # http.ca_file = File.join(File.dirname(__FILE__), "cacert.pem")
+puts "Doing normal compression"
+source.to_file("images/out/small-compressed.jpg")
 
-  request = Net::HTTP::Post.new(uri.request_uri)
-  request.basic_auth("api", key)
+# puts "Resizing image"
+resized = source.resize(method: 'fit', width: 100, height: 80)
+resized.to_file("images/out/small-compressed-resized.jpg")
 
-  response = http.request(request, File.binread(input))
+aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
 
-  if response.code == "201"
-    File.binwrite(output, http.get(response["location"]).body)
-  else
-    raise "Compression failed"
-  end
-end
+source.store(
+  service: 's3',
+  aws_access_key_id: aws_access_key_id,
+  aws_secret_access_key: aws_secret_access_key,
+  path: 'tinypng-com-preview/testing/small.jpg'
+)
+resized.store(
+  service: 's3',
+  aws_access_key_id: aws_access_key_id,
+  aws_secret_access_key: aws_secret_access_key,
+  path: 'tinypng-com-preview/testing/small-resized.jpg'
+)
 
-# Dir["./images/*"].each do |name|
-#   compress(name, name)
-# end
-
-puts "starting compression"
-compress("images/small.jpg", "images/out/small.jpg")
-puts "compression done"
+puts "\nThank you come again!"
+puts "Compression count: #{Tinify.compression_count}"
