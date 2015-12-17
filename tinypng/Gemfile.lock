@@ -1,6 +1,5 @@
-GIT
-  remote: git@github.com:tinify/tinify-ruby.git
-  revision: 9708e823ae6ebcbf1d48575c2ad5f3a6bfd4b2be
+PATH
+  remote: /Users/frankevers/Code/github/tinify/tinify-ruby
   specs:
     tinify (1.1.0)
       httpclient (~> 2.6)

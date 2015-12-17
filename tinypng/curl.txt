@@ -1,5 +1,5 @@
 # live
-curl -i --user "api:$TINY_KEY" --data-binary @images/medium.jpg https://api.tinypng.com/shrink
+curl -i -k --user "api:$TINY_KEY" --data-binary @images/medium.jpg https://api.tinypng.pre/shrink
 curl -X POST -k "https://api.tinypng.com/output/knd0l195cemakn2r.png"
 
 # live compression count
@@ -32,3 +32,44 @@ curl -s -D - -XPOST --user "api:$TINY_KEY" --header "Content-Type: application/j
       "path": "tinypng-com-preview/test123.png"
     }
 }’
+
+curl -XPOST -i --header "Content-Type: application/json" --user "api:$TINY_KEY" http://api.tinypng.local:8001/shrink -d '{}'
+curl -XPOST -i --header "Content-Type: application/json" --user "api:$TINY_KEY" http://api.tinypng.local:8001/shrink -d '{"source": {} }'
+curl -XPOST -i --header "Content-Type: application/json" --user "api:$TINY_KEY" http://api.tinypng.local:8001/shrink -d '{"source": {"url": "https://tinypng.com/images/jpg/panda-png-happy.png"} }'
+
+curl -XPOST --include --insecure --header "Content-Type: application/json" --user "api:$TINY_KEY" https://api.tinypng.pre/shrink -d '{"source": {"url": "https://tinypng.com/images/jpg/panda-png-happy.png"} }'
+
+
+curl --request POST --include --insecure --header "Content-Type: application/json" \
+   --user "api:$TINY_KEY" https://api.tinypng.pre/shrink \
+   -d '{"source": {"url": "https://tinypng.com/images/jpg/panda-png-happy.png"} }'
+
+
+echo '
+  {
+    "source": {
+      "url": "https://tinypng.com/images/jpg/panda-png-happy.png"
+    }
+  }' | http --verify no --auth "api:$TINY_KEY" https://api.tinypng.pre/shrink
+
+echo '
+  {
+    "source": {
+      "url": "http://jfadskfjfljkfldas"
+    }
+  }' | http --verify no --auth "api:$TINY_KEY" https://api.tinypng.pre/shrink
+
+echo '
+  {
+    "source": {
+      "url": "http://jfadskfjfljkfldas"
+    }
+  }' | http --verify no --auth "api:$TINY_KEY" http://api.tinypng.local:8001/shrink
+
+echo '
+  {
+    "source": {
+      "url": "http:/jfadskfjfljkfldas"
+    }
+  }' | http --verify no --auth "api:$TINY_KEY" http://api.tinypng.local:8001/shrink
+
