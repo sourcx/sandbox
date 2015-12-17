@@ -1,3 +1,4 @@
 source "https://rubygems.org"
 
-gem "tinify", git: "git@github.com:tinify/tinify-ruby.git"
+gem "tinify", path: "/Users/frankevers/Code/github/tinify/tinify-ruby"
+# gem "tinify", git: "git@github.com:tinify/tinify-ruby.git"
