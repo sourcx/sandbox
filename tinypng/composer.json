@@ -1,0 +1,17 @@
+{
+  "name": "tinify client test",
+  "require": {
+    "php": ">=5.3.0",
+    "tinify/tinify": "*"
+  },
+  "repositories": [
+    {
+      "url": "/Users/frankevers/Code/github/tinify/tinify-php",
+      "type": "vcs"
+    },
+    {
+      "url": "http://wpackagist.org",
+      "type": "composer"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
 .DS_Store
 canvas/lib
 tinypng/images/out
+tinypng/vendor
