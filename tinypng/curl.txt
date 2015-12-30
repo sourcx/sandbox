@@ -37,7 +37,13 @@ curl -XPOST -i --header "Content-Type: application/json" --user "api:$TINY_KEY" 
 curl -XPOST -i --header "Content-Type: application/json" --user "api:$TINY_KEY" http://api.tinypng.local:8001/shrink -d '{"source": {} }'
 curl -XPOST -i --header "Content-Type: application/json" --user "api:$TINY_KEY" http://api.tinypng.local:8001/shrink -d '{"source": {"url": "https://tinypng.com/images/jpg/panda-png-happy.png"} }'
 
-curl -XPOST --include --insecure --header "Content-Type: application/json" --user "api:$TINY_KEY" https://api.tinypng.pre/shrink -d '{"source": {"url": "https://tinypng.com/images/jpg/panda-png-happy.png"} }'
+curl -XPOST --include --header "Content-Type: application/json" \
+    --user "api:$TINY_KEY" https://api.tinypng.com/shrink \
+    --data '{
+     "source": {
+       "url": "https://tinypng.com/images/jpg/panda-png-happy.png"
+     }
+   }'
 
 
 curl --request POST --include --insecure --header "Content-Type: application/json" \
@@ -50,7 +56,7 @@ echo '
     "source": {
       "url": "https://tinypng.com/images/jpg/panda-png-happy.png"
     }
-  }' | http --verify no --auth "api:$TINY_KEY" https://api.tinypng.pre/shrink
+  }' | http --verify no --auth "api:$TINY_KEY" https://api.tinypng.com/shrink
 
 echo '
   {
@@ -69,7 +75,8 @@ echo '
 echo '
   {
     "source": {
-      "url": "http:/jfadskfjfljkfldas"
+      "url": "http://frankevers.nl/img/brie.jp"
     }
   }' | http --verify no --auth "api:$TINY_KEY" http://api.tinypng.local:8001/shrink
 
+curl -XPOST --insecure --header "Content-Type: application/json" --user "api:$TINY_KEY" http://api.tinypng.local:8001/shrink -d '{ "source": { "url": "https://raw.githubusercontent.com/tinify/tinify-ruby/master/test/examples/voormedia.png" } }'
