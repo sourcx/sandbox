@@ -1,0 +1,10 @@
+curl -XPOST http://es-host:9200/orders/_suggest?pretty -d '
+{
+  "seller-autocomplete": {
+    "text": "TES",
+    "completion": {
+      "field" : "seller_name"
+    }
+  }
+}
+'
