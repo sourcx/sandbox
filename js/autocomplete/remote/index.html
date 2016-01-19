@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Autocomplete ajax</title>
+</head>
+<body>
+
+<h1>Autocomplete</h1>
+
+<div>
+	<input id="autocomplete" title="type &quot;a&quot;">
+</div>
+
+<p>
+<button id="languages">switch to languages</button>
+<button id="names">switch to names</button>
+</p>
+<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="jquery.autocomplete.min.js"></script>
+
+<script>
+$( "#autocomplete" ).autocomplete({
+	serviceUrl: "URL ...",
+  onSelect: function (suggestion) {
+    console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+  }
+});
+
+</script>
+</body>
+</html>
