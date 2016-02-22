@@ -1,0 +1,83 @@
+<html>
+<head>
+  <script src="nouislider.js"></script>
+  <link href="nouislider.css" rel="stylesheet">
+
+  <style>
+  body { background: #eeeeee; }
+  .slider {
+    margin: 80px;
+    width: 400px;
+  }
+  .noUi-tooltip {
+    background: #ddd;
+/*    top: -32px;*/
+  }
+
+  .noUi-horizontal .noUi-handle-upper .noUi-tooltip {
+    top: -32px;
+    bottom: initial;
+  }
+</style>
+</head>
+
+<body>
+<div class="slider" id="timelineranger"></div>
+
+<div class="slider">
+  Lower: <span id='lower'></span><br>
+  Upper: <span id='upper'></span>
+</div>
+
+
+<script src="http://momentjs.com/downloads/moment.js"></script>
+
+<script>
+var timeSlider = document.getElementById('timelineranger');
+
+noUiSlider.create(timeSlider, {
+  start: [10000, 5400000],
+  connect: true,
+  step: 10000,
+  range: {
+    'min': 10000,
+    'max': 5400000
+  }
+});
+
+function msToHHMMSS(value) {
+  return "msToHHMMSS " + value;
+
+  // var duration = moment.duration(parseInt(value, 10));
+  // var addZero = function(v) { return (v<10 ? '0' : '') + Math.floor(v); };
+  //
+  // var time = addZero(duration.hours()) +
+  // ':' + addZero(duration.minutes()) +
+  // ':' + addZero(duration.seconds());
+  // return time;
+}
+
+function HHMMSSToms(value) {
+  console.log("HHMMSSToms " + value);
+  return value;
+
+//   var a = value.toString().split(':');
+//   var ms = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]) * 1000;
+//   return ms;
+}
+
+timeSlider.noUiSlider.on('update', function (values, handle) {
+  if (handle) {
+    console.log("update right");
+    $('.timeMax').text(values[handle]);
+
+    document.getElementById('upper').innerHTML = msToHHMMSS(values[handle]);
+  } else {
+    console.log("update left");
+    document.getElementById('lower').innerHTML = values[handle];
+  }
+});
+</script>
+
+</body>
+</html>
