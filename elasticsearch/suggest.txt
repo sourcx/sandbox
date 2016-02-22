@@ -1,9 +1,61 @@
-curl -XPOST http://es-host:9200/orders/_suggest?pretty -d '
+curl -XPOST http://es-host:9200/index/_suggest?pretty -d '
 {
-  "seller-autocomplete": {
-    "text": "TES",
+  "what-will-it-be": {
+    "text": "E",
     "completion": {
-      "field" : "seller_name"
+      "field" : "reference_suggest"
+    }
+  }
+}
+'
+
+curl http://es-host:9200/index/_suggest?pretty -d '
+{
+  "suggestions": {
+    "text": "R",
+    "completion": {
+      "field" : "name_suggest"
+    }
+  }
+}
+'
+
+curl http://es-host:9200/index/_suggest?pretty -d '
+{
+  "suggestions": {
+    "text": "0581S",
+    "completion": {
+      "field" : "order_reference_suggest"
+    }
+  }
+}'
+curl http://es-host:9200/index/_suggest?pretty -d '
+{
+  "suggestions": {
+    "text": "0581",
+    "completion": {
+      "field" : forder_reference_suggest"
+    }
+  }
+}'
+
+curl http://es-host:9200/index/_suggest?pretty -d '
+{
+  "suggestions": {
+    "text": "022498519",
+    "completion": {
+      "field" : "order_reference_suggest"
+    }
+  }
+}
+'
+
+curl http://es-host:9200/index/_suggest?pretty -d '
+{
+  "suggestions": {
+    "text": "378988",
+    "completion": {
+      "field" : "short_item_code_suggest"
     }
   }
 }

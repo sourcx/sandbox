@@ -3,7 +3,7 @@
 echo "shrinking images/in/*, place results in images/out/"
 mkdir -p tiny
 
-for file in images/in/*
+for file in images/visuals/*
 do
   if [[ -f $file ]]; then
     echo "compressing $file"
