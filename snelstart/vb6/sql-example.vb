@@ -1,3 +1,18 @@
+'Directe database connectie met een online administratie
+'Met de volgende stappen kan een directe database connectie opgezet worden naar een online administratie
+'1. Login
+'2. prpGWayLoginSettingsGet
+'a. Het Administratiekeuze-scherm wordt geopend
+'3. Gebruik de volgende members van het result voor het opzetten van een databaseconnectie met de online administratie:
+'a. prpGWayDbSqlServerNameGet
+'b. prpGWayDbAdministratieNaamGet (bevat de database naam van de SQL Azure database)
+'c. prpGWayDbSqlUserNameGet
+'d. prpGWayDbSqlPasswordGet
+'Opmerking 1: het instellen van prpGWayAdmiUserNameSet en prpGWayAdmiUserPasswordSet moet hier niet gebeuren. Hierin wordt de gebruiker van de administratie zelf ingesteld.
+'Opmerking 2: De geldigheidsduur van de verkregen SQL login is gelijk aan die van de Gateway login, zoals beschreven bij de methode Login().
+'Let op: van een administratie die zich online bevindt (in SQL Azure), verschilt de administratienaam met de databasenaam. De administratienaam is de naam, zoals de SnelStart gebruiker die ooit heeft opgegeven. De databasenaam is een interne naam, waarvan het SnelStart Services Platform gebruik maakt.
+'Hieronder staat een voorbeeld van het opzetten van een directe SQL-connectie:
+
 Dim login As SnelStartGatewayNET.clsGWayLoginSettings
 Dim gateway As New SnelStartGatewayNET. clsGWaySnelStart
 Dim admiNaam As String

@@ -16,7 +16,8 @@
  ' Aanmaken GateWay-object
   Set varGWaySnelStart = New clsGWaySnelStart
  End Sub
- '
+
+
  'Openen adminstratie via de FolderDialog
  Private Sub cmdAdmiOpenViaDialog_Click()
   On Error GoTo ErrHandler
@@ -37,6 +38,7 @@
     'Gegevens in het LoginSettings-object die wel aanwezig zijn maar niet uitgelezen kunnen worden:
     'Sql: LoginPassword SqlServer
   End With
+
   '2. Openen administratie met het LoginSettings-object
   '----------------------------------------------------
   If varGWaySnelStart.mtdGWayAdmiOpenenViaLoginSettings(Me.hWnd, varGWayLoginSettings) = True Then
