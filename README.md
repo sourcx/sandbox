@@ -1,2 +1,2 @@
 # sandybox
-a sandy box
+a sandbox
