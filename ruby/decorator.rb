@@ -19,3 +19,21 @@ puts t.name
 
 t = SuperThing.new(t)
 puts t.name
+
+nil_super_thing = SuperThing.new(nil)
+
+if nil_super_thing
+  puts 'nil_super_thing is true'
+else
+  puts 'nil_super_thing is a lie'
+end
+
+if nil
+  puts 'nil is true'
+else
+  puts 'nil is a lie'
+end
+
+puts 'well ok then...'
+puts (nil_super_thing == nil)
+puts (nil == nil_super_thing)

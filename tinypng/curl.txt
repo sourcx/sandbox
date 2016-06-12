@@ -1,5 +1,5 @@
 # live
-curl -i -k --user "api:$TINY_KEY" --data-binary @images/medium.jpg https://api.tinypng.pre/shrink
+curl -i -k --user "api:$TINY_KEY" --data-binary @images/in/medium.jpg https://api.tinypng.pre/shrink
 curl -X POST -k "https://api.tinypng.com/output/knd0l195cemakn2r.png"
 
 # live compression count

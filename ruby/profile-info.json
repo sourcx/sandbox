@@ -1,0 +1,14 @@
+{
+  "response": {
+    "players": [
+      {
+        "steamid": "76561198019000000",
+        "communityvisibilitystate": 3,
+        "profilestate": 1,
+        "personaname": "me",
+        "lastlogoff": 1457088001,
+      }
+    ]
+
+  }
+}
