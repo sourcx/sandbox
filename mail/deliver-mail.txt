@@ -1,0 +1,15 @@
+# deliver mail plaintext
+telnet mailserver.example.com 25
+MAIL FROM:<from@example.com>
+RCPT TO:<to@example.com>
+DATA
+From: Frank <from@example.com>
+Subject: The Next Meeting
+To: to@example.comfrom@example.com
+Hi John,
+The next meeting will be on Friday.
+/Anna.
+
+
+# deliver mail with ssl
+openssl s_client -debug -starttls smtp -crlf -connect mailserver.example.com:25

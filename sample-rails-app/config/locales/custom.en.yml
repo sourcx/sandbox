@@ -1,0 +1,7 @@
+en:
+  activemodel:
+    attributes:
+      table_one:
+        field_two: Field TWO
+
+# I18n.t('activemodel.attributes.table_one.field_two')
