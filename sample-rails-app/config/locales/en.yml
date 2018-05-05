@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      table_one:
+        field_one: Field one
+
+# I18n.load_path << "#{Rails.root}/config/locales/custom.en.yml"
+
+# I18n.t('activerecord.attributes.table_one.field_one')
+# I18n.t('activemodel.attributes.table_one.field_two')
