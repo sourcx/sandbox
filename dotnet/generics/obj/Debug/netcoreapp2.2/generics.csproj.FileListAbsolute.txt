@@ -1,0 +1,11 @@
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/bin/Debug/netcoreapp2.2/generics.deps.json
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/bin/Debug/netcoreapp2.2/generics.runtimeconfig.json
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/bin/Debug/netcoreapp2.2/generics.runtimeconfig.dev.json
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/bin/Debug/netcoreapp2.2/generics.dll
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/bin/Debug/netcoreapp2.2/generics.pdb
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/obj/Debug/netcoreapp2.2/generics.csprojAssemblyReference.cache
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/obj/Debug/netcoreapp2.2/generics.csproj.CoreCompileInputs.cache
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/obj/Debug/netcoreapp2.2/generics.AssemblyInfoInputs.cache
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/obj/Debug/netcoreapp2.2/generics.AssemblyInfo.cs
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/obj/Debug/netcoreapp2.2/generics.dll
+/Users/frank/Code/github/sourcx/sandbox/dotnet/generics/obj/Debug/netcoreapp2.2/generics.pdb
