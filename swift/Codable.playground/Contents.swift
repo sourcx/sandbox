@@ -46,7 +46,7 @@ var decodedOtherLandmark = try! JSONDecoder().decode(OtherLandmark.self, from: e
 print(decodedOtherLandmark)
 
 
-// With a property that is also Codable
+// With a property that is also Codable`
 enum RequestType: Int, Codable {
     case login = 0
     case register = 1
