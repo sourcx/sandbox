@@ -2,3 +2,5 @@
 canvas/lib
 tinypng/images/out
 tinypng/vendor
+bin/
+obj/
