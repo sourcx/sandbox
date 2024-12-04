@@ -1,0 +1,4 @@
+bin/
+obj/
+secret_mongodb*
+secret_sas*
