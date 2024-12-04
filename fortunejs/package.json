@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "fortune": "^5.5.19"
+  },
+  "devDependencies": {
+    "eslint": "^9.2.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
