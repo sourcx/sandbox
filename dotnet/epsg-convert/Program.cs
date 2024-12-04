@@ -13,6 +13,15 @@ internal class Program
         Example();
         ConvertJsonFile("rectangle-EPSG28992.json");
         ConvertJsonFile("nederland-EPSG28992.json");
+        ConvertJsonFile("limburg-EPSG28992.json");
+        ConvertJsonFile("zuidholland-EPSG28992.json");
+        ConvertJsonFile("friesland-EPSG28992.json");
+        ConvertJsonFile("blokindeling-EPSG28992.json");
+        ConvertJsonFile("rijnijssel-EPSG28992.json");
+        ConvertJsonFile("rivierenland1-EPSG28992.json");
+        ConvertJsonFile("rivierenland2-EPSG28992.json");
+        ConvertJsonFile("rectangle-limburg-1-EPSG28992.json");
+        ConvertJsonFile("rectangle-limburg-2-EPSG28992.json");
     }
 
     private static void Example()
