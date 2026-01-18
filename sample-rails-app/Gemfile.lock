@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/mshibuya/remotipart.git
-  revision: 88d9a7d55bde66acb6cf3a3c6036a5a1fc991d5e
+  remote: https://github.com/mshibuya/remotipart.git
+  revision: a1860d64aef484047bc1ef50e2f19ef2480eacf9
   specs:
-    remotipart (1.2.1)
+    remotipart (1.4.4)
 
 GEM
   remote: https://rubygems.org/
@@ -109,7 +109,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pkg-config (1.1.7)
-    rack (1.6.4)
+    rack (1.6.13)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
